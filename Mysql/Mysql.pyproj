@@ -5,13 +5,17 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>279c5bd6-583e-433d-9b02-5070c4b0bdcb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>connection.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Mysql</Name>
     <RootNamespace>Mysql</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>11 12 100</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +27,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="connection.py" />
+    <Compile Include="insert.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="transfer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="select.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
