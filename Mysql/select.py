@@ -1,4 +1,4 @@
-﻿import MySQLdb
+import MySQLdb
 
 conn = MySQLdb.connect(
                         host = '127.0.0.1',
@@ -11,6 +11,25 @@ conn = MySQLdb.connect(
 
 cursor = conn.cursor()
 
-print conn
+sql = "select * from user"
 
-print cursor
+cursor.execute(sql)
+
+print cursor.rowcount
+
+rs = cursor.fetchone()
+
+print rs
+
+rs = cursor.fetchmany(3)
+
+print rs
+
+rs = cursor.fetchall()
+
+for row in rs:
+    print "iduser=%s,username=%s,location=%s" % row
+
+cursor.close()
+
+conn.close()
