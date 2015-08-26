@@ -1,4 +1,4 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
 import sys
 import MySQLdb
 
@@ -16,7 +16,7 @@ class TransferMoney(object):
             print "check_acct_availiable: " + sql
             rs =cursor.fetchall()
             if len(rs)!=1:
-                raise Exception("ÕËºÅ%s²»´æÔÚ"%accid)
+                raise Exception("è´¦å·%sä¸å­˜åœ¨"%accid)
         finally:
             cursor.close()
 
@@ -28,7 +28,7 @@ class TransferMoney(object):
             print "has_enough_money: " + sql
             rs =cursor.fetchall()
             if len(rs)!=1:
-                raise Exception("ÕËºÅ%sÃ»ÓĞ×ã¹»µÄÇ®"%accid)
+                raise Exception("è´¦å·%sæ²¡æœ‰è¶³å¤Ÿçš„é’±"%accid)
         finally:
             cursor.close()
 
@@ -39,7 +39,7 @@ class TransferMoney(object):
             cursor.execute(sql)
             print "add_money:" + sql
             if cursor.rowcount !=1:
-                raise Exception("ÕËºÅ%s¼Ó¿îÊ§°Ü"%accid)
+                raise Exception("è´¦å·%såŠ æ¬¾å¤±è´¥"%accid)
         finally:
             cursor.close()
 
@@ -50,7 +50,7 @@ class TransferMoney(object):
             cursor.execute(sql)
             print "reduce_money:" + sql
             if cursor.rowcount !=1:
-                raise Exception("ÕËºÅ%s¼õ¿îÊ§°Ü"%accid)
+                raise Exception("è´¦å·%så‡æ¬¾å¤±è´¥"%accid)
         finally:
             cursor.close()
 
@@ -86,6 +86,6 @@ if __name__=="__main__":
     try:
         tr_money.transfer(source_accid,target_accid,money)
     except Exception as e:
-        print "³öÏÖÎÊÌâ£º " + str(e)
+        print "å‡ºç°é—®é¢˜ï¼š " + str(e)
     finally:
         conn.close()
