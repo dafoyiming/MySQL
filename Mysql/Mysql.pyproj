@@ -29,10 +29,10 @@
     <Compile Include="insert.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="transfer.py">
+    <Compile Include="select.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="select.py">
+    <Compile Include="transfer.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
